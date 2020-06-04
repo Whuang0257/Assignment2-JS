@@ -97,18 +97,12 @@ function testmyEvery(i) {
 }
 console.log(myEvery(a,testmyEvery));
 
-function myReduce(array, callback) {
+function myReduce(array,callback) {
     let a = 0;
     for (let i = 0; i < array.length; i++) {
         a+=callback(array[i]);
     }
     return a;
-}
-
-function testMyReduce(i) {
-    console.log(myReduce(a));
-    console.log(myReduce(a,3));
-
 }
 
 function myIncludes(array, callback) {
@@ -161,4 +155,29 @@ function myLastIndexOf(array, callback) {
 let c = [1,2,3,4,2]
 console.log(myLastIndexOf(c,testMyindexOf));
 
-function grabKeys
+function grabKeys(object) {
+    let result = [];
+    let x;
+    for (x in object) {
+        result.push(x);
+    }
+    return result;
+}
+
+function grabValues(object) {
+    let result = [];
+    let x;
+    for (x in object) {
+        result.push(object[x]);
+    }
+    return result;
+}
+
+const object1 = {
+    a: 'somestring',
+    b: 42,
+    c: false
+};
+
+console.log(grabKeys(object1));
+console.log(grabValues(object1));
